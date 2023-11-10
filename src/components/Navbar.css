@@ -1,0 +1,106 @@
+
+/* Navbar.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+
+.landing .header{
+  min-height: 80px;
+  /* display: flex; */
+}
+
+.logo{
+  width: 90px;
+  border-radius: 50px;
+}
+
+.small-logo{
+  width: 90px;
+  margin-top: 20px!important;
+  border-radius: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url('../pages/img/hero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 10px 20px;
+  color: white;
+}
+
+
+.menu-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* Hide the button initially */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links.visible {
+  transform: translateX(0);
+}
+
+.nav-links li {
+  padding: 10px 20px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.fa-bars {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show the menu icon on smaller screens */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off-screen */
+    height: 100vh;
+    width: 300px;
+    flex-direction: column;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-links a {
+    color: #000;
+  }
+
+  .nav-brand {
+    display: none; /* Hide the brand on smaller screens */
+  }
+
+  .nav-links.visible {
+    transform: translateX(-300px); /* Slide in from the right */
+  }
+  .small-logo{
+    display: block;
+  }
+}
+
+
+
